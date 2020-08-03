@@ -7,3 +7,30 @@ function doGet() {
   return toppage.evaluate();
 
 }
+
+function doPost(postdata){
+// フォーム送信されたら起動
+// フォームからの返り値を引数として”postdata”で受け取る
+
+//
+  var ss=SpreadsheetApp.getActiveSpreadsheet();
+  var sh=ss.getSheetByName('待ち時間');
+  //const rows = sh.getDataRange(['time','num']).getLastRow();
+ 
+  var time=new Date();
+  
+  // postdataはオブジェクト型なのでtoStringで文字列変換
+  var num=postdata.parameters.number.toString();
+  // var gender=postdata.parameters.gender.toString();
+  // var animal=postdata.parameters.animal.toString();
+  
+  // appendRowで最終行に追加する形で、フォームの回答内容を記録
+  
+  //sheet.getRange(rows).setValues([time,num]);
+  
+  sh.appendRow([time,num]);
+  
+  // resultというファイルで結果を表示
+  var resultpage=HtmlService.createTemplateFromFile('result');
+  return resultpage.evaluate();
+}
