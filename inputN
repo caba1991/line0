@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <base target="_top">
+    <h1>訪問人数を入力してください。<h1>
+      <script>
+    function preventFormSubmit() {
+      var forms = document.querySelectorAll('form');
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].addEventListener('submit', function(event) {
+          event.preventDefault();
+        });
+      }
+    }
+    window.addEventListener('load', preventFormSubmit);
+
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <form onsubmit="handleFormSubmit(this)">  
+        <table align="center" class="teble1">  
+            <tbody>  
+
+                <tr>  
+                    <th>人数</th>  
+                    <td>  
+                        <input type="text" name="i1">  
+                    </td> 
+                    <th>人</th>
+                </tr>
+        </table><!-- end table -->  
+        <input type="submit" value="送信">
+    </form>
+    </div>
+  </body>
+</html>
