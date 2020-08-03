@@ -1,37 +1,15 @@
+// GAS"test"のURL＝https://script.google.com/macros/s/AKfycbydwhrZ25nSryezU9fZOU6sSi2zB_YcCiZlCK9R753rvTI4bw/exec
 <html>
   <head>
     <base target="_top">
-    <h1>訪問人数を入力してください。<h1>
-      <script>
-    function preventFormSubmit() {
-      var forms = document.querySelectorAll('form');
-      for (var i = 0; i < forms.length; i++) {
-        forms[i].addEventListener('submit', function(event) {
-          event.preventDefault();
-        });
-      }
-    }
-    window.addEventListener('load', preventFormSubmit);
+  </head>
+  <body>
 
-    </script>
-
-</head>
-<body>
-<div class="container">
-    <form onsubmit="handleFormSubmit(this)">  
-        <table align="center" class="teble1">  
-            <tbody>  
-
-                <tr>  
-                    <th>人数</th>  
-                    <td>  
-                        <input type="text" name="i1">  
-                    </td> 
-                    <th>人</th>
-                </tr>
-        </table><!-- end table -->  
-        <input type="submit" value="送信">
-    </form>
-    </div>
+   <h1>人数を入力してください</h1>
+   <form method=”post” action=”https://script.google.com/macros/s/AKfycbwvNsTpF5-yq9IH6_kFutV_JjUAU1-uojNZghC-CfW4x9lov389/exec”>
+   <input type=”text” name=”name”>人<br> 
+     <input type=”submit” value=”送信する”>
+  </form>
+  
   </body>
 </html>
