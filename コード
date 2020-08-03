@@ -1,0 +1,9 @@
+// WEBにアクセスされたら起動
+
+function doGet() {
+
+  // HTMLを起動
+  var toppage=HtmlService.createTemplateFromFile('index');
+  return toppage.evaluate();
+
+}
